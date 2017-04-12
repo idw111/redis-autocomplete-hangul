@@ -2,11 +2,13 @@
 
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url] 
 
+
 ## Installation
 
 ```sh
 $ npm install --save redis-autocomplete-hangul
 ```
+
 
 ## Usage Example
 
@@ -20,25 +22,26 @@ const AutocompleteIndexer = createAutocompleteIndexer({
 });
 
 Promise.all([
-  AutocompleteIndexer.index('가나', 1),
-  AutocompleteIndexer.index('가나초콜렛', 2),
-  AutocompleteIndexer.index('가부장적', 3),
-  AutocompleteIndexer.index('가나다', 4)
+  AutocompleteIndexer.index('가나'),
+  AutocompleteIndexer.index('가나초콜렛'),
+  AutocompleteIndexer.index('가부장적'),
+  AutocompleteIndexer.index('가내수공업')
 ]).then(() => {
-  return AutocompleteIndexer.query('가나')
+  return AutocompleteIndexer.query('가ㄴ')
 }).then(results => {
   console.log(results);
-  // ['가나', '가나초콜렛', '가나다']
-  return AutocompleteIndexer.remove(1);
+  // ['가나', '가나초콜렛', '가내수공업']
+  return AutocompleteIndexer.remove('가내수공업');
 }).then(() => {
-  return AutocompleteIndexer.query('가나');
+  return AutocompleteIndexer.query('가ㄴ');
 }).then(results => {
   console.log(results);
-  // ['가나초콜렛', '가나다']
+  // ['가나', '가나초콜렛']
   return AutocompleteIndexer.remove(1);
 });
 
 ```
+
 
 ## API
 
@@ -51,9 +54,15 @@ This queries characters on indexed words. Indexed words starting with the charac
 ### AutocompleteIndexer.remove(word);
 This removes the indexed word. Removed words cannot be queried using AutocompleteIndexer.query method.
 
+
+## Acknowledgement
+
+[Antirez](http://oldblog.antirez.com/post/autocomplete-with-redis.html)
+
+
 ## License
 
-MIT © [Dongwon Lim]()
+MIT © [Dongwon Lim](idw111@gmail.com)
 
 
 [npm-image]: https://badge.fury.io/js/redis-autocomplete-hangul.svg
