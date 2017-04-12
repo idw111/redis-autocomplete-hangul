@@ -45,13 +45,20 @@ Promise.all([
 
 ## API
 
-### AutocompleteIndexer.index(word);
+### createAutocompleteIndexer(options)
+This return AutocompleteIndexer. You should provide redis connection information in options. Additional options are hashKey and maxCacheLength.
+
+#### Options
+- hashKey: defaults 'ac'. This option changes redis namespace.
+- maxCacheLength: defaults 15. First maxCacheLength characters in indexed word are cached in redis for autocomplete suggestion.
+
+### AutocompleteIndexer.index(word)
 This indexes word. Indexed words can be queried using AutocompleteIndexer.query method.
 
-### AutocompleteIndexer.query(characters);
+### AutocompleteIndexer.query(characters)
 This queries characters on indexed words. Indexed words starting with the characters will be retrieved from the redis. It returns promise object with array of strings.
 
-### AutocompleteIndexer.remove(word);
+### AutocompleteIndexer.remove(word)
 This removes the indexed word. Removed words cannot be queried using AutocompleteIndexer.query method.
 
 
