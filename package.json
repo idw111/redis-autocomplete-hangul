@@ -1,0 +1,49 @@
+{
+  "name": "redis-autocomplete-hangul",
+  "version": "0.1.0",
+  "description": "",
+  "homepage": "",
+  "author": {
+    "name": "Dongwon Lim",
+    "email": "idw111@gmail.com",
+    "url": ""
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "keywords": [
+    ""
+  ],
+  "devDependencies": {
+    "coveralls": "^2.12.0",
+    "nsp": "^2.6.3",
+    "eslint": "^3.18.0",
+    "eslint-config-xo-space": "^0.16.0",
+    "jest": "^19.0.2",
+    "jest-cli": "^19.0.1"
+  },
+  "scripts": {
+    "prepublish": "nsp check",
+    "pretest": "eslint . --fix",
+    "test": "jest"
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "jest": true,
+      "node": true
+    }
+  },
+  "repository": "https://github.com/idw111/redis-autocomplete-hangul.git",
+  "jest": {
+    "testEnvironment": "node",
+    "watchman": false
+  },
+  "license": "MIT",
+  "dependencies": {
+    "hangul-disassemble": "^0.5.0",
+    "redis": "^2.7.1",
+    "shortid": "^2.2.8"
+  }
+}
