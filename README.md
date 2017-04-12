@@ -22,10 +22,10 @@ const AutocompleteIndexer = createAutocompleteIndexer({
 });
 
 Promise.all([
+  AutocompleteIndexer.index('가내수공업'),
   AutocompleteIndexer.index('가나'),
   AutocompleteIndexer.index('가나초콜렛'),
-  AutocompleteIndexer.index('가부장적'),
-  AutocompleteIndexer.index('가내수공업')
+  AutocompleteIndexer.index('가부장적')
 ]).then(() => {
   return AutocompleteIndexer.query('가ㄴ')
 }).then(results => {
@@ -37,7 +37,6 @@ Promise.all([
 }).then(results => {
   console.log(results);
   // ['가나', '가나초콜렛']
-  return AutocompleteIndexer.remove(1);
 });
 
 ```
