@@ -1,7 +1,7 @@
 {
   "name": "redis-autocomplete-hangul",
-  "version": "0.2.6",
-  "description": "",
+  "version": "0.2.7",
+  "description": "Redis autocomplete with support for Hangul",
   "homepage": "",
   "author": {
     "name": "Dongwon Lim",
