@@ -1,6 +1,6 @@
 {
   "name": "redis-autocomplete-hangul",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "homepage": "",
   "author": {
@@ -42,7 +42,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "hangul-disassemble": "^0.5.0",
+    "hangul-disassemble": "^0.5.1",
     "redis": "^2.7.1",
     "shortid": "^2.2.8"
   }
