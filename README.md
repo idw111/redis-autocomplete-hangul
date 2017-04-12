@@ -1,8 +1,9 @@
 # redis-autocomplete-hangul 
 
+> Redis autocomplete with support for Hangul
+
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url] 
 
-> Redis autocomplete with support for Hangul
 
 ## Installation
 
