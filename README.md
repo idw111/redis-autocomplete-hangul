@@ -55,8 +55,8 @@ This return AutocompleteIndexer. You should provide redis connection information
 ### AutocompleteIndexer.index(word)
 This indexes word. Indexed words can be queried using AutocompleteIndexer.query method.
 
-### AutocompleteIndexer.query(characters)
-This queries characters on indexed words. Indexed words starting with the characters will be retrieved from the redis. It returns promise object with array of strings.
+### AutocompleteIndexer.query(characters[, options])
+This queries characters on indexed words. Indexed words starting with the characters will be retrieved from the redis. It returns promise object with array of strings. You can set query results count using options.count (default 5).
 
 ### AutocompleteIndexer.remove(word)
 This removes the indexed word. Removed words cannot be queried using AutocompleteIndexer.query method.
