@@ -52,14 +52,41 @@ This return AutocompleteIndexer. You should provide redis connection information
 - hashKey: defaults 'ac'. This option changes redis namespace.
 - maxCacheLength: defaults 15. First maxCacheLength characters in indexed word are cached in redis for autocomplete suggestion.
 
+```js
+const createAutocompleteIndexer = require('redis-autocomplete-hangul');
+const AutocompleteIndexer = createAutocompleteIndexer({
+  // redis connection information is requried
+  redis: {
+    host: 'localhost',
+    port: 6379
+  },
+  // others are optional
+  hashKey: 'ac',
+  maxCacheLength: 15
+});
+```
+
 ### AutocompleteIndexer.index(word)
 This indexes word. Indexed words can be queried using AutocompleteIndexer.query method.
+
+```js
+AutoCompleteIndexer.index('파리, 프랑스');
+```
 
 ### AutocompleteIndexer.query(characters[, options])
 This queries characters on indexed words. Indexed words starting with the characters will be retrieved from the redis. It returns promise object with array of strings. You can set query results count using options.count (default 5).
 
+```js
+AutoCompleteIndexer.query('파');
+AutoCompleteIndexer.query('파', {count: 10});
+```
+
 ### AutocompleteIndexer.remove(word)
 This removes the indexed word. Removed words cannot be queried using AutocompleteIndexer.query method.
+
+```js
+AutoCompleteIndexer.remove('파리, 프랑스');
+```
 
 
 ## Acknowledgement
