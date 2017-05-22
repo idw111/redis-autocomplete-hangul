@@ -1,6 +1,6 @@
 {
   "name": "redis-autocomplete-hangul",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Redis autocomplete with support for Hangul",
   "homepage": "",
   "author": {

@@ -55,7 +55,7 @@ This return AutocompleteIndexer. You should provide redis connection information
 ```js
 const createAutocompleteIndexer = require('redis-autocomplete-hangul');
 const AutocompleteIndexer = createAutocompleteIndexer({
-  // redis connection information is requried
+  // redis connection information is required
   redis: {
     host: 'localhost',
     port: 6379
